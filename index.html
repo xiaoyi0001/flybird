@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas width="800" height="600" id="cv"></canvas>
+<script src="js/Fly.js"></script>
+<script src="js/bird.js"></script>
+<script src="js/sky.js"></script>
+<script src="js/land.js"></script>
+<script src="js/pipe.js"></script>
+<script src="js/game.js"></script>
+<script>
+    var cv = document.getElementById("cv");
+    var ctx = cv.getContext("2d");
+
+
+    Fly.getGame({context: ctx}).startGame();
+    //创建一个数组保存图片名称
+    //var imgList = ['birds', 'land', 'pipe1', 'pipe2', 'sky'];
+    //callback为一个函数
+    //    function load(imgList, callback) {
+    //        //声明一个变量记录图片加载的数量
+    //        var count = 0;
+    //
+    //        //声明一个对象保存每个图片对象
+    //        var imgs = {};
+    //        //遍历该数组,创建图片对象
+    //        imgList.forEach(function (val) {
+    //            var img = new Image();
+    //            //设置图片对象的src属性
+    //            img.src = 'imgs/' + val + '.png';
+    //            //将图片对象放入到imgs中
+    //            imgs[val] = img;
+    //            //添加加载事件
+    //            img.addEventListener('load', function () {
+    //                count++;
+    //                if (count >= 5) {
+    //                    //执行绘图等操作的代码
+    //                    callback(imgs);
+    //                }
+    //            })
+    //        })
+    //    }
+    //
+    //    load(imgList, function (obj) {
+    //
+    //        //创建小鸟对象
+    //        var birdObj = new Fly.bird({
+    //            img    : obj['birds'],
+    //            context: ctx
+    //        });
+    //
+    //        //创建一个数组保存所有除小鸟以外的对象
+    //        var roles = [];
+    //        //创建天空对象
+    //        for (var i = 0; i < 2; i++) {
+    //            var skyObj = new Fly.sky({
+    //                img    : obj['sky'],
+    //                context: ctx,
+    //                x      : obj['sky'].width * i
+    //            });
+    //            roles.push(skyObj);
+    //        }
+    //        //创建管道对象
+    //        for (var i = 0; i < 6; i++) {
+    //            var pipeObj = new Fly.pipe({
+    //                imgTop   : obj['pipe2'],
+    //                imgBottom: obj['pipe1'],
+    //                context  : ctx,
+    //                x        : 300 + obj['pipe1'].width * 3 * i
+    //            });
+    //            roles.push(pipeObj);
+    //        }
+    //
+    //        //创建陆地对象
+    //        for (var i = 0; i < 4; i++) {
+    //            var landObj = new Fly.land({
+    //                img    : obj['land'],
+    //                context: ctx,
+    //                x      : obj['land'].width * i
+    //            });
+    //            roles.push(landObj);
+    //        }
+    //var lastTime = new Date();
+    //定义一个变量判断是否执行绘制
+    //var flag = true;
+
+    //渲染函数
+    //        function render() {
+    //
+    //            if (flag == true) {
+    //                //开启新路径
+    //                ctx.beginPath();
+    //                //保留当前状态
+    //                ctx.save();
+    //                //当前帧的时间
+    //                //var currentTime = new Date();
+    //                //时间间隔
+    //                var t = currentTime - lastTime;
+    //                lastTime = currentTime;
+    //                //清除画布
+    //                ctx.clearRect(0, 0, cv.width, cv.height);
+    //
+    //                //调用渲染方法
+    //                roles.forEach(function (role) {
+    //                    role.render(t);
+    //                });
+    //
+    //                //调用渲染小鸟方法
+    //                birdObj.render(t);
+    //
+    //                if (birdObj.y >= landObj.y) {
+    //                    flag = false;
+    //                }
+    //                if (ctx.isPointInPath(birdObj.x, birdObj.y)) {
+    //                    flag = false;
+    //                }
+    //                //调用点击画布事件
+    //                birdObj.changSpeed();
+    //                //还原状态
+    //                ctx.restore();
+    //                window.requestAnimationFrame(render);
+    //
+    //            }
+    //        }
+    //
+    //        window.requestAnimationFrame(render);
+
+    //    })
+</script>
+</body>
+</html>
